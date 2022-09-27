@@ -3,9 +3,30 @@ adam_update
 
 .. autofunction:: ivy.functional.ivy.gradients.adam_update
 
-.. autofunction:: ivy.container.container_methods.static_adam_update
+.. autofunction:: ivy.array.array_methods.adam_update
 
 .. autofunction:: ivy.container.container_methods.adam_update
+
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 
@@ -33,6 +54,6 @@ adam_update
    :caption: adam_update
 
    adam_update/adam_update_functional.rst
+   adam_update/adam_update_array.rst
    adam_update/adam_update_container.rst
-   adam_update/static_adam_update_container.rst
 

@@ -7,7 +7,26 @@ layer_norm
 
 .. autofunction:: ivy.container.container_methods.layer_norm
 
-.. autofunction:: ivy.container.container_methods.static_layer_norm
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 
@@ -37,5 +56,4 @@ layer_norm
    layer_norm/layer_norm_functional.rst
    layer_norm/layer_norm_array.rst
    layer_norm/layer_norm_container.rst
-   layer_norm/static_layer_norm_container.rst
 

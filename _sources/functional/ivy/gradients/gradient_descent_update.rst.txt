@@ -7,7 +7,26 @@ gradient_descent_update
 
 .. autofunction:: ivy.container.container_methods.gradient_descent_update
 
-.. autofunction:: ivy.container.container_methods.static_gradient_descent_update
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 
@@ -37,5 +56,4 @@ gradient_descent_update
    gradient_descent_update/gradient_descent_update_functional.rst
    gradient_descent_update/gradient_descent_update_array.rst
    gradient_descent_update/gradient_descent_update_container.rst
-   gradient_descent_update/static_gradient_descent_update_container.rst
 

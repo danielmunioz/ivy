@@ -6,6 +6,29 @@ swapaxes
 .. autofunction:: ivy.array.array_methods.swapaxes
 
 .. autofunction:: ivy.container.container_methods.swapaxes
+
+.. autofunction:: ivy.container.container_methods.static_swapaxes
+
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 
@@ -33,6 +56,7 @@ swapaxes
    :caption: swapaxes
 
    swapaxes/swapaxes_functional.rst
+   swapaxes/static_swapaxes_container.rst
    swapaxes/swapaxes_array.rst
    swapaxes/swapaxes_container.rst
 

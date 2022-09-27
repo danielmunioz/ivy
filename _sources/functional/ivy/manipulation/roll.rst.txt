@@ -5,9 +5,30 @@ roll
 
 .. autofunction:: ivy.array.array_methods.roll
 
+.. autofunction:: ivy.container.container_methods.static_roll
+
 .. autofunction:: ivy.container.container_methods.roll
 
-.. autofunction:: ivy.container.container_methods.static_roll
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 

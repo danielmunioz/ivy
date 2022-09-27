@@ -5,9 +5,30 @@ logaddexp
 
 .. autofunction:: ivy.array.array_methods.logaddexp
 
+.. autofunction:: ivy.container.container_methods.static_logaddexp
+
 .. autofunction:: ivy.container.container_methods.logaddexp
 
-.. autofunction:: ivy.container.container_methods.static_logaddexp
+.. list-table:: Device Support
+   :widths: 20 20 20 20 20
+   :header-rows: 1
+
+   * - Device
+     - JAX
+     - NumPy
+     - TensorFlow
+     - PyTorch
+   * - CPU
+     - ✅
+     - ✅
+     - ✅
+     - ✅
+   * - GPU
+     - ❌
+     - ❌
+     - ❌
+     - ❌
+
 |
 | **Supported Frameworks:**
 
