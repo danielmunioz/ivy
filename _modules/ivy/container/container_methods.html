@@ -76,19 +76,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -963,7 +963,7 @@
 <span class="kn">import</span> <span class="nn">ivy</span>
 
 
-<span class="n">ansi_escape</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\x1B(?:[-Z</span><span class="se">\\</span><span class="s2">-_]|\[[0-?]*[ -/]*[-~])&quot;</span><span class="p">)</span>
+<span class="n">ansi_escape</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\x1B(?:[@-Z</span><span class="se">\\</span><span class="s2">-_]|\[[0-?]*[ -/]*[@-~])&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_is_jsonable</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -11707,6 +11707,34 @@
     <span class="k">pass</span></div>
 
 
+<span class="k">def</span> <span class="nf">static_dct</span><span class="p">(</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">n</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">norm</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">dct</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="nb">type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">n</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">norm</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+
 <span class="c1">#ivy.container.general</span>
 <span class="c1"># global</span>
 <span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
@@ -16201,7 +16229,7 @@
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
     <span class="p">)</span></div>
 
-<span class="nd">staticmethod</span>
+<span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">static_multi_head_attention</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
     <span class="n">scale</span><span class="p">,</span>
@@ -16281,7 +16309,7 @@
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
     <span class="p">)</span></div>
 
-<span class="nd">staticmethod</span>
+<span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">static_conv1d</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
     <span class="n">filters</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
@@ -16589,7 +16617,7 @@
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
     <span class="p">)</span></div>
 
-<span class="nd">staticmethod</span>
+<span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">static_conv2d_transpose</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
     <span class="n">filters</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
@@ -16653,7 +16681,7 @@
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
     <span class="p">)</span></div>
 
-<span class="nd">staticmethod</span>
+<span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">static_depthwise_conv2d</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
     <span class="n">filters</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
@@ -19502,7 +19530,7 @@
         <span class="n">map_sequences</span><span class="o">=</span><span class="n">map_sequences</span><span class="p">,</span>
     <span class="p">)</span></div>
 
-<span class="nd">staticmethod</span>
+<span class="nd">@staticmethod</span>
 <span class="k">def</span> <span class="nf">static_permute_dims</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
     <span class="o">/</span><span class="p">,</span>

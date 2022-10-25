@@ -76,19 +76,19 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Data Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="data_classes/array.html">Array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_classes/container.html">Container</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_classes/array.html">Array</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Framework Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="stateful/converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/initializers.html">Initializers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/sequential.html">Sequential</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/module.html">Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/optimizers.html">Optimizers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/norms.html">Norms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stateful/layers.html">Layers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stateful/initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stateful/converters.html">Converters</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Docs</span></p>
 <ul>
@@ -1264,6 +1264,8 @@
         <li><a href="functional/ivy/extensions.html#ivy.functional.ivy.extensions.SparseArray.data">(ivy.functional.ivy.extensions.SparseArray property)</a>
 </li>
       </ul></li>
+      <li><a href="data_classes/container/extensions.html#ivy.container.extensions.ContainerWithExtensions.dct">dct() (ivy.container.extensions.ContainerWithExtensions method)</a>, <a href="data_classes/container/extensions/ContainerWithExtensions.html#ivy.container.extensions.ContainerWithExtensions.dct">[1]</a>
+</li>
       <li><a href="functional/ivy/layers.html#ivy.functional.ivy.layers.deconv_length">deconv_length() (in module ivy.functional.ivy.layers)</a>, <a href="functional/ivy/layers/deconv_length.html#ivy.functional.ivy.layers.deconv_length">[1]</a>
 
       <ul>
@@ -4962,6 +4964,8 @@
 </li>
       <li><a href="data_classes/container.html#ivy.container.container.Container.static_current_backend_str">static_current_backend_str() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_current_backend_str">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_current_backend_str">[2]</a>
 </li>
+      <li><a href="data_classes/container/extensions.html#ivy.container.extensions.ContainerWithExtensions.static_dct">static_dct() (ivy.container.extensions.ContainerWithExtensions static method)</a>, <a href="data_classes/container/extensions/ContainerWithExtensions.html#ivy.container.extensions.ContainerWithExtensions.static_dct">[1]</a>
+</li>
       <li><a href="data_classes/container.html#ivy.container.container.Container.static_deconv_length">static_deconv_length() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_deconv_length">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_deconv_length">[2]</a>
 </li>
       <li><a href="data_classes/container.html#ivy.container.container.Container.static_default">static_default() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_default">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_default">[2]</a>
@@ -5226,10 +5230,10 @@
 </li>
       <li><a href="data_classes/container.html#ivy.container.container.Container.static_get_referrers_recursive">static_get_referrers_recursive() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_get_referrers_recursive">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_get_referrers_recursive">[2]</a>
 </li>
-      <li><a href="data_classes/container.html#ivy.container.container.Container.static_get_tmp_dir">static_get_tmp_dir() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_get_tmp_dir">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_get_tmp_dir">[2]</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_classes/container.html#ivy.container.container.Container.static_get_tmp_dir">static_get_tmp_dir() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_get_tmp_dir">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_get_tmp_dir">[2]</a>
+</li>
       <li><a href="data_classes/container.html#ivy.container.container.Container.static_get_x_data_format">static_get_x_data_format() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_get_x_data_format">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_get_x_data_format">[2]</a>
 </li>
       <li><a href="data_classes/container.html#ivy.container.container.Container.static_gpu_is_available">static_gpu_is_available() (ivy.container.container.Container method)</a>, <a href="data_classes/container/container.html#ivy.container.container.Container.static_gpu_is_available">[1]</a>, <a href="data_classes/container/container/Container.html#ivy.container.container.Container.static_gpu_is_available">[2]</a>
