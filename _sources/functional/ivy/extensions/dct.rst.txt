@@ -3,6 +3,8 @@ dct
 
 .. autofunction:: ivy.functional.ivy.extensions.dct
 
+.. autofunction:: ivy.array.array_methods.dct
+
 .. autofunction:: ivy.container.container_methods.static_dct
 
 .. autofunction:: ivy.container.container_methods.dct
@@ -33,6 +35,7 @@ dct
    :caption: dct
 
    dct/dct_functional.rst
+   dct/dct_array.rst
    dct/dct_container.rst
    dct/static_dct_container.rst
 
