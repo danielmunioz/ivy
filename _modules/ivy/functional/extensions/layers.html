@@ -985,7 +985,7 @@
 <span class="sd">    type</span>
 <span class="sd">        The type of the dct. Must be 1, 2, 3 or 4.</span>
 <span class="sd">    n</span>
-<span class="sd">        The lenght of the transform. If n is less than the input signal lenght, </span>
+<span class="sd">        The lenght of the transform. If n is less than the input signal lenght,</span>
 <span class="sd">        then x is truncated, if n is larger then x is zero-padded.</span>
 <span class="sd">    norm</span>
 <span class="sd">        The type of normalization to be applied. Must be either None or &quot;ortho&quot;.</span>
@@ -1034,14 +1034,14 @@
 
 <span class="sd">    With multiple :class:`ivy.Container` inputs:</span>
 
-<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([8, 16, 24, 32, 40, 48, 56, 64], dtype=ivy.float32),</span>
-<span class="sd">    ...                   b=ivy.array([1,  2,  3,  4,  5,  6,  7,  8], dtype=ivy.float32))</span>
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([8, 16, 24, 32, 40, 48, 56, 64]),</span>
+<span class="sd">    ...                   b=ivy.array([1,  2,  3,  4,  5,  6,  7,  8]))</span>
 <span class="sd">    &gt;&gt;&gt; container_n = ivy.Container(a=9, b=4)</span>
 <span class="sd">    &gt;&gt;&gt; container_type = ivy.Container(a=2, b=1)</span>
 <span class="sd">    &gt;&gt;&gt; container_norm = ivy.Container(a=&quot;ortho&quot;, b=None)</span>
 <span class="sd">    &gt;&gt;&gt; ivy.dct(x, type=container_type, n=container_n, norm=container_norm)</span>
 <span class="sd">    {</span>
-<span class="sd">        a: ivy.array([96., -28.2, -31.9, 22.9, -26., 19.8, -17., 10.9, </span>
+<span class="sd">        a: ivy.array([96., -28.2, -31.9, 22.9, -26., 19.8, -17., 10.9,</span>
 <span class="sd">                    -5.89]),</span>
 <span class="sd">        b: ivy.array([15., -4., 0., -1.])</span>
 <span class="sd">    }</span>
