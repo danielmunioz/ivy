@@ -1011,6 +1011,14 @@
 <span class="sd">    &gt;&gt;&gt; ivy.dct(x, type=2, n=None, norm=&#39;ortho&#39;)</span>
 <span class="sd">    ivy.array([102., -51.5, 0., -5.39, 0., -1.61, 0., -0.406])</span>
 
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([[[8, 16, 24, 32], [40, 48, 56, 64]], </span>
+<span class="sd">               [[1,  2,  3,  4], [ 5,  6,  7,  8]]])</span>
+<span class="sd">    &gt;&gt;&gt; ivy.dct(x, type=1, n=None, axis=0, norm=None)</span>
+<span class="sd">    ivy.array([[[ 9., 18., 27., 36.],</span>
+<span class="sd">                [45., 54., 63., 72.]],</span>
+<span class="sd">               [[ 7., 14., 21., 28.],</span>
+<span class="sd">                [35., 42., 49., 56.]]])</span>
+
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[ 8.1, 16.2, 24.3, 32.4],</span>
 <span class="sd">    ...                [40.5, 48.6, 56.7, 64.8]])</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.zeros((2, 4), dtype=ivy.float32)</span>
