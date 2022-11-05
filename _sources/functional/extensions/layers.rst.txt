@@ -21,5 +21,6 @@ Layers
    layers/pad.rst
    layers/kaiser_bessel_derived_window.rst
    layers/hamming_window.rst
-   layers/dct.rst
+   layers/max_pool3d.rst
+   layers/avg_pool3d.rst
 
