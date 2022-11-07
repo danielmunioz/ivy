@@ -1,6 +1,6 @@
 # local
 import ivy
-from ivy.functional.frontends.torch.tensor import Tensor
+from ivy.functional.frontends.torch.Tensor import Tensor
 
 
 # TODO: Once the PyTorch Frontend Array Decorators are added,

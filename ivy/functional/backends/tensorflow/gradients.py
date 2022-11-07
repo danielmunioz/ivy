@@ -34,11 +34,11 @@ def variable_data(x):
 def execute_with_gradients(
     func, xs, /, *, retain_grads=False, xs_grad_idxs=None, ret_grad_idxs=None
 ):
-    xs = _arrays_to_float_variables(xs, xs_grad_idxs=xs_grad_idxs)
-    xs_required = _get_required_native_variables(xs, xs_grad_idxs)
+    xs = _arrays_to_float_variables(xs)
     with tf.GradientTape(persistent=True, watch_accessed_variables=False) as tape:
-        tape.watch(xs_required)
+        tape.watch(ivy.to_native(xs))
         func_ret = func(xs)
+    xs = _get_required_native_variables(xs, xs_grad_idxs)
     ret_idxs, ret_values = _get_native_variables_and_indices(func_ret, reshape=False)
     if ret_values is None or (isinstance(ret_values, list) and len(ret_values) == 0):
         return func_ret, {}
@@ -49,11 +49,9 @@ def execute_with_gradients(
 
     def grad_func(y):
         grads_ = ivy.nested_map(
-            xs_required,
-            lambda x: ivy.to_native(ivy.zeros_like(x)),
-            include_derived=True,
+            xs, lambda x: ivy.to_native(ivy.zeros_like(x)), include_derived=True
         )
-        grads = tape.gradient(y, xs_required)
+        grads = tape.gradient(y, ivy.to_native(xs))
         if isinstance(grads, ivy.Container):
             grads = ivy.nested_map(
                 grads, lambda x: 0 if x is None else x, include_derived=True

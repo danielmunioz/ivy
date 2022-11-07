@@ -251,7 +251,7 @@ def promote_types_of_tensorflow_inputs(
 
 
 from . import tensor
-from .tensor import *
+from .tensor import Tensor
 from . import keras
 from . import linalg
 from . import math

@@ -229,22 +229,19 @@ def cumprod(
     if not (exclusive or reverse):
         return torch.cumprod(x, axis, dtype=dtype, out=out)
     elif exclusive and reverse:
-        x = torch.cumprod(torch.flip(x, dims=(axis,)), axis, dtype=dtype)
+        x = torch.cumprod(torch.flip(x, dims=(axis,)), axis=axis, dtype=dtype)
         x = torch.transpose(x, axis, -1)
         x = torch.concat((torch.ones_like(x[..., -1:]), x[..., :-1]), -1)
         x = torch.transpose(x, axis, -1)
-        ret = torch.flip(x, dims=(axis,))
+        return torch.flip(x, dims=(axis,))
     elif exclusive:
         x = torch.transpose(x, axis, -1)
         x = torch.cat((torch.ones_like(x[..., -1:]), x[..., :-1]), -1)
         x = torch.cumprod(x, -1, dtype=dtype)
-        ret = torch.transpose(x, axis, -1)
-    else:
-        x = torch.cumprod(torch.flip(x, dims=(axis,)), axis, dtype=dtype)
-        ret = torch.flip(x, dims=(axis,))
-    if ivy.exists(out):
-        return ivy.inplace_update(out, ret)
-    return ret
+        return torch.transpose(x, axis, -1)
+    elif reverse:
+        x = torch.cumprod(torch.flip(x, dims=(axis,)), axis=axis, dtype=dtype)
+        return torch.flip(x, dims=(axis,))
 
 
 cumprod.support_native_out = True
@@ -271,7 +268,7 @@ def cumsum(
         dtype = _infer_dtype(x.dtype)
     if exclusive or reverse:
         if exclusive and reverse:
-            x = torch.cumsum(torch.flip(x, dims=(axis,)), axis, dtype=dtype)
+            x = torch.cumsum(torch.flip(x, dims=(axis,)), axis=axis, dtype=dtype)
             x = torch.transpose(x, axis, -1)
             x = torch.concat((torch.zeros_like(x[..., -1:]), x[..., :-1]), -1)
             x = torch.transpose(x, axis, -1)
@@ -281,11 +278,9 @@ def cumsum(
             x = torch.cat((torch.zeros_like(x[..., -1:]), x[..., :-1]), -1)
             x = torch.cumsum(x, -1, dtype=dtype)
             res = torch.transpose(x, axis, -1)
-        else:
-            x = torch.cumsum(torch.flip(x, dims=(axis,)), axis, dtype=dtype)
+        elif reverse:
+            x = torch.cumsum(torch.flip(x, dims=(axis,)), axis=axis, dtype=dtype)
             res = torch.flip(x, dims=(axis,))
-        if ivy.exists(out):
-            return ivy.inplace_update(out, res)
         return res
     return torch.cumsum(x, axis, dtype=dtype, out=out)
 
@@ -299,8 +294,5 @@ def einsum(
     out: Optional[torch.Tensor] = None,
 ) -> torch.Tensor:
     dtype = _get_promoted_type_of_operands(operands)
-    operands = (
-        ivy.astype(operand, torch.float32, copy=False).to_native()
-        for operand in operands
-    )
-    return ivy.astype(torch.einsum(equation, *operands), dtype, copy=False)
+    operands = (operand.to(torch.float32) for operand in operands)
+    return torch.einsum(equation, *operands).to(dtype)

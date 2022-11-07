@@ -1,3 +1,9 @@
+"""
+ToDo
+----
+Add allclose(), isclose(), isposinf(), isneginf(), fmax()
+to ivy functional API
+"""
 # global
 import ivy
 import ivy.functional.frontends.torch as torch_frontend
@@ -277,10 +283,3 @@ def kthvalue(input, k, dim=-1, keepdim=False, *, out=None):
     if ivy.exists(out):
         return ivy.inplace_update(out, ret)
     return ret
-
-
-@to_ivy_arrays_and_back
-def topk(input, k, dim=None, largest=True, sorted=True, *, out=None):
-    if dim is None:
-        dim = -1
-    return ivy.top_k(input, k, axis=dim, largest=largest, out=out)
