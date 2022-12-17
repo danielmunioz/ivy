@@ -35,6 +35,7 @@ Experimental
    experimental/quantile.rst
    experimental/diagflat.rst
    experimental/kron.rst
+   experimental/matrix_exp.rst
    experimental/eig.rst
    experimental/triu_indices.rst
    experimental/vorbis_window.rst
@@ -81,6 +82,7 @@ Experimental
    experimental/isclose.rst
    experimental/isposinf.rst
    experimental/isneginf.rst
+   experimental/angle.rst
    experimental/nan_to_num.rst
    experimental/logaddexp2.rst
    experimental/signbit.rst
