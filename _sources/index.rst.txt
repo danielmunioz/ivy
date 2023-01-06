@@ -298,7 +298,6 @@ Citation
    :caption: Functions
 
    functional/backends.rst
-   functional/experimental.rst
    functional/frontends.rst
    functional/ivy.rst
 
@@ -322,6 +321,7 @@ Citation
    stateful/converters.rst
    stateful/module.rst
    stateful/initializers.rst
+   stateful/helpers.rst
    stateful/sequential.rst
    stateful/norms.rst
    stateful/optimizers.rst
