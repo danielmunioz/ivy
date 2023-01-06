@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="ivy.trapz" href="trapz/trapz_functional.html" />
-    <link rel="prev" title="ivy.Container.static_fmax" href="fmax/static_fmax_container.html" /> 
+    <link rel="prev" title="ivy.Container.static_fmin" href="fmin/static_fmin_container.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -70,16 +70,19 @@
 <li class="toctree-l2"><a class="reference internal" href="dirichlet.html">dirichlet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="beta.html">beta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gamma.html">gamma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poisson.html">poisson</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logit.html">logit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="median.html">median</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nanmean.html">nanmean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unravel_index.html">unravel_index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quantile.html">quantile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corrcoef.html">corrcoef</a></li>
 <li class="toctree-l2"><a class="reference internal" href="diagflat.html">diagflat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kron.html">kron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="matrix_exp.html">matrix_exp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eig.html">eig</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multi_dot.html">multi_dot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eigvals.html">eigvals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adjoint.html">adjoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="triu_indices.html">triu_indices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vorbis_window.html">vorbis_window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hann_window.html">hann_window</a></li>
@@ -117,6 +120,7 @@
 <li class="toctree-l2"><a class="reference internal" href="lcm.html">lcm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fmod.html">fmod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fmax.html">fmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fmin.html">fmin</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">trapz</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="trapz/trapz_functional.html">ivy.trapz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trapz/trapz_array.html">ivy.Array.trapz</a></li>
@@ -147,8 +151,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../activations.html">Activations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compilation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control_flow_ops.html">Control flow ops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../creation.html">Creation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../data_type.html">Data type</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../device.html">Device</a></li>
@@ -170,16 +174,19 @@
 <li class="toctree-l2"><a class="reference internal" href="dirichlet.html">dirichlet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="beta.html">beta</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gamma.html">gamma</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poisson.html">poisson</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logit.html">logit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="median.html">median</a></li>
 <li class="toctree-l2"><a class="reference internal" href="nanmean.html">nanmean</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unravel_index.html">unravel_index</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quantile.html">quantile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="corrcoef.html">corrcoef</a></li>
 <li class="toctree-l2"><a class="reference internal" href="diagflat.html">diagflat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kron.html">kron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="matrix_exp.html">matrix_exp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eig.html">eig</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multi_dot.html">multi_dot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eigvals.html">eigvals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adjoint.html">adjoint</a></li>
 <li class="toctree-l2"><a class="reference internal" href="triu_indices.html">triu_indices</a></li>
 <li class="toctree-l2"><a class="reference internal" href="vorbis_window.html">vorbis_window</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hann_window.html">hann_window</a></li>
@@ -217,6 +224,7 @@
 <li class="toctree-l2"><a class="reference internal" href="lcm.html">lcm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fmod.html">fmod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fmax.html">fmax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fmin.html">fmin</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">trapz</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="trapz/trapz_functional.html">ivy.trapz</a></li>
 <li class="toctree-l3"><a class="reference internal" href="trapz/trapz_array.html">ivy.Array.trapz</a></li>
@@ -425,7 +433,7 @@ than 1, then the result is an n-1 dimensional array.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="fmax/static_fmax_container.html" class="btn btn-neutral float-left" title="ivy.Container.static_fmax" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fmin/static_fmin_container.html" class="btn btn-neutral float-left" title="ivy.Container.static_fmin" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="trapz/trapz_functional.html" class="btn btn-neutral float-right" title="ivy.trapz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
