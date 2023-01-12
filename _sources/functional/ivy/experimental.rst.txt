@@ -59,7 +59,6 @@ Experimental
    experimental/dct.rst
    experimental/fft.rst
    experimental/dropout1d.rst
-   experimental/ifft.rst
    experimental/diagflat.rst
    experimental/kron.rst
    experimental/matrix_exp.rst
@@ -82,7 +81,6 @@ Experimental
    experimental/isposinf.rst
    experimental/isneginf.rst
    experimental/angle.rst
-   experimental/imag.rst
    experimental/nan_to_num.rst
    experimental/logaddexp2.rst
    experimental/signbit.rst
