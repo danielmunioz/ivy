@@ -1630,8 +1630,9 @@
 <span class="sd">    x</span>
 <span class="sd">        array, input array containing elements to copy.</span>
 <span class="sd">    to_ivy_array</span>
-<span class="sd">        boolean, if True the returned array will be an ivy.Array instance otherwise </span>
-<span class="sd">        ivy.NativeArray, defaults to True.</span>
+<span class="sd">        boolean, if True the returned array will be an ivy.Array object otherwise </span>
+<span class="sd">        returns an ivy.NativeArray object (i.e. a torch.tensor, np.array, etc., </span>
+<span class="sd">        depending on the backend), defaults to True.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to. It must have a shape that the</span>
 <span class="sd">        inputs broadcast to.</span>
