@@ -17,7 +17,6 @@ Elementwise
    elementwise/lcm.rst
    elementwise/fmod.rst
    elementwise/fmax.rst
-   elementwise/fmin.rst
    elementwise/trapz.rst
    elementwise/float_power.rst
    elementwise/exp2.rst
@@ -26,12 +25,12 @@ Elementwise
    elementwise/nansum.rst
    elementwise/gcd.rst
    elementwise/isclose.rst
+   elementwise/isposinf.rst
+   elementwise/isneginf.rst
    elementwise/angle.rst
-   elementwise/imag.rst
    elementwise/nan_to_num.rst
    elementwise/logaddexp2.rst
    elementwise/signbit.rst
-   elementwise/hypot.rst
    elementwise/diff.rst
    elementwise/allclose.rst
    elementwise/fix.rst
@@ -39,5 +38,4 @@ Elementwise
    elementwise/zeta.rst
    elementwise/gradient.rst
    elementwise/xlogy.rst
-   elementwise/real.rst
 
