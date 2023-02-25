@@ -44,7 +44,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="test_frontend_method" href="test_frontend_method.html" />
-    <link rel="prev" title="kwargs_to_args_n_kwargs" href="kwargs_to_args_n_kwargs.html" />
+    <link rel="prev" title="make_json_pickable" href="make_json_pickable.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="docsearch:language" content="en">
   </head>
@@ -266,6 +266,48 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../nested_array/nested_array.html">
                         Nested array
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/backend.html">
+                        Backend
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/_importlib.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/assertions.html">
+                        Assertions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/dynamic_import.html">
+                        Dynamic import
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/inspection.html">
+                        Inspection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/verbosity.html">
+                        Verbosity
                       </a>
                     </li>
                 
@@ -632,6 +674,48 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/backend.html">
+                        Backend
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/_importlib.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/assertions.html">
+                        Assertions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/dynamic_import.html">
+                        Dynamic import
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/inspection.html">
+                        Inspection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../utils/verbosity.html">
+                        Verbosity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../assertions.html">
                         Assertions
                       </a>
@@ -816,16 +900,19 @@
 <li class="toctree-l1"><a class="reference internal" href="as_lists.html">as_lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="convtrue.html">convtrue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="create_args_kwargs.html">create_args_kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_frontend_args_kwargs.html">create_frontend_args_kwargs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="empty_func.html">empty_func</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flatten.html">flatten</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flatten_and_to_np.html">flatten_and_to_np</a></li>
 <li class="toctree-l1"><a class="reference internal" href="flatten_fw_and_to_np.html">flatten_fw_and_to_np</a></li>
+<li class="toctree-l1"><a class="reference internal" href="framework_comparator.html">framework_comparator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get_frontend_ret.html">get_frontend_ret</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get_ret_and_flattened_np_array.html">get_ret_and_flattened_np_array</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gradient_incompatible_function.html">gradient_incompatible_function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gradient_test.html">gradient_test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gradient_unsupported_dtypes.html">gradient_unsupported_dtypes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="kwargs_to_args_n_kwargs.html">kwargs_to_args_n_kwargs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_json_pickable.html">make_json_pickable</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">test_frontend_function</a></li>
 <li class="toctree-l1"><a class="reference internal" href="test_frontend_method.html">test_frontend_method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="test_function.html">test_function</a></li>
@@ -868,25 +955,15 @@
 <h1>test_frontend_function<a class="headerlink" href="#test-frontend-function" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy_tests.test_ivy.helpers.function_testing.test_frontend_function">
-<span class="sig-prename descclassname"><span class="pre">ivy_tests.test_ivy.helpers.function_testing.</span></span><span class="sig-name descname"><span class="pre">test_frontend_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dtypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_variable_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_aliases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_positional_args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">native_array_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frontend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">all_as_kwargs_np</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_tests/test_ivy/helpers/function_testing.html#test_frontend_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_tests.test_ivy.helpers.function_testing.test_frontend_function" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy_tests.test_ivy.helpers.function_testing.</span></span><span class="sig-name descname"><span class="pre">test_frontend_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dtypes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_flags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on_device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cpu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frontend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fn_tree</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">all_as_kwargs_np</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_tests/test_ivy/helpers/function_testing.html#test_frontend_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_tests.test_ivy.helpers.function_testing.test_frontend_function" title="Permalink to this definition">#</a></dt>
 <dd><p>Tests a frontend function for the current backend by comparing the result with
 the function in the associated framework.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_dtypes</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>]]) – data types of the input arguments in order.</p></li>
-<li><p><strong>as_variable_flags</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – dictates whether the corresponding input argument should be treated
-as an ivy Variable.</p></li>
-<li><p><strong>with_out</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – if True, the function is also tested for inplace update to an array
-passed to the optional out argument.</p></li>
-<li><p><strong>with_inplace</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – if True, the function is only tested with direct inplace update back to (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
-the inputted array and ignore the value of with_out.</p></li>
-<li><p><strong>all_aliases</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]) – a list of strings containing all aliases for that function (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>all_aliases</strong> – a list of strings containing all aliases for that function
 in the current frontend with their full namespaces.</p></li>
-<li><p><strong>num_positional_args</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – number of input arguments that must be passed as positional
-arguments.</p></li>
-<li><p><strong>native_array_flags</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – dictates whether the corresponding input argument should be treated
-as a native array.</p></li>
 <li><p><strong>frontend</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – current frontend (framework).</p></li>
 <li><p><strong>fn_tree</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>) – Path to function in frontend framework namespace.</p></li>
 <li><p><strong>rtol</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – relative tolerance value. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
@@ -915,11 +992,11 @@ as a native array.</p></li>
             <footer class="bd-footer-article">
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="kwargs_to_args_n_kwargs.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="make_json_pickable.html" title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">kwargs_to_args_n_kwargs</p>
+          <p class="prev-next-title">make_json_pickable</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="test_frontend_method.html" title="next page">

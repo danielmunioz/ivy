@@ -271,6 +271,48 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/backend.html">
+                        Backend
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/_importlib.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/assertions.html">
+                        Assertions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/dynamic_import.html">
+                        Dynamic import
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/inspection.html">
+                        Inspection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/verbosity.html">
+                        Verbosity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../testing/assertions.html">
                         Assertions
                       </a>
@@ -632,6 +674,48 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/backend.html">
+                        Backend
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/_importlib.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/assertions.html">
+                        Assertions
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/dynamic_import.html">
+                        Dynamic import
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/inspection.html">
+                        Inspection
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../utils/verbosity.html">
+                        Verbosity
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../testing/assertions.html">
                         Assertions
                       </a>
@@ -852,8 +936,8 @@
 <nav id="bd-toc-nav" class="page-toc">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clone-ivy">
-   Clone Ivy
+  <a class="reference internal nav-link" href="#forking-and-cloning-the-repo">
+   Forking and cloning the repo
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -971,17 +1055,24 @@
 <h1>Setting Up<a class="headerlink" href="#setting-up" title="Permalink to this heading">#</a></h1>
 <p>We’re really happy you’d like to learn how to contribute towards Ivy 🙂</p>
 <p>This page explains the main steps to get started!</p>
-<section id="clone-ivy">
-<h2>Clone Ivy<a class="headerlink" href="#clone-ivy" title="Permalink to this heading">#</a></h2>
-<p>The first step is simple, clone Ivy!</p>
+<section id="forking-and-cloning-the-repo">
+<h2>Forking and cloning the repo<a class="headerlink" href="#forking-and-cloning-the-repo" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>You first need to fork the Ivy repository from the repository page here <a class="reference external" href="https://github.com/unifyai/ivy">repo</a> by using the fork button on the top right. This creates a copy of Ivy repository in your GitHub account.</p></li>
+<li><p>Clone your forked repo to your local machine.</p></li>
+</ol>
 <p>Depending on your preferred mode of cloning, any of the below should work:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules git@github.com:unifyai/ivy.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules git@github.com:YOUR_USERNAME/ivy.git
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/unifyai/ivy.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone --recurse-submodules https://github.com/YOUR_USERNAME/ivy.git
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gh repo clone --recurse-submodules unifyai/ivy your_folder
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>gh repo clone YOUR_USERNAME/ivy your_folder -- --recurse-submodules
+</pre></div>
+</div>
+<p>Then add Ivy original repository as upstream, to easily sync with latest changes.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git remote add upstream https://github.com/unifyai/ivy.git
 </pre></div>
 </div>
 </section>
@@ -1161,8 +1252,11 @@ Add the remote python interpreter by:</p>
 Click the “+” on top left and it should add a docker connection.</p></li>
 <li><p>Going to settings -&gt; project -&gt; Python Interpreter</p></li>
 <li><p>Clicking add interpreter (currently by clicking the ⚙ icon by the right side) which should open a new window.</p></li>
-<li><p>Choosing “Docker” from the left panel.
-Type python3 (with the number) in python interpreter path and press ok.</p></li>
+<li><p>Choosing “On Docker” from the dropdown menu.</p></li>
+<li><p>Choosing “Docker” from the “Docker server” dropdown menu, choosing “Pull” if you want to use a remote interpreter, and using <code class="code docutils literal notranslate"><span class="pre">unifyai/ivy:latest</span></code> as the image tag.</p></li>
+<li><p>If you don’t want to use a remote interpreter, choose “Build” and use the suitable Dockerfile; then choosing <code class="code docutils literal notranslate"><span class="pre">docker/Dockerfile</span></code> to be the Dockerfile.</p></li>
+<li><p>Clicking next and navigating to system interpreter tab from the menu on the left.</p></li>
+<li><p>Choosing the built interpreter from the dropdown menu.</p></li>
 </ol>
 </li>
 </ol>
