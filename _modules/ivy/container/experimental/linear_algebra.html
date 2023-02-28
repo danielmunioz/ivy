@@ -1261,7 +1261,7 @@
 
 <div class="viewcode-block" id="ContainerWithLinearAlgebraExperimental.static_multi_dot"><a class="viewcode-back" href="../../../../data_classes/container/experimental.html#ivy.container.experimental.ContainerWithLinearAlgebraExperimental.static_multi_dot">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">static_multi_dot</span><span class="p">(</span>
-        <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
+        <span class="n">x</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1293,9 +1293,12 @@
 <span class="sd">        --------</span>
 <span class="sd">        With :class:`ivy.Container` input:</span>
 <span class="sd">        </span>
-<span class="sd">        &gt;&gt;&gt; a = ivy.Container(x=ivy.arange(2 * 3).reshape((2, 3)), y=ivy.arange(2 * 3).reshape((2, 3)))</span>
-<span class="sd">        &gt;&gt;&gt; b = ivy.Container(x=ivy.arange(3 * 2).reshape((3, 2)), y=ivy.arange(3 * 2).reshape((3, 2)))</span>
-<span class="sd">        &gt;&gt;&gt; c = ivy.Container(x=ivy.arange(2 * 2).reshape((2, 2)), y=ivy.arange(2 * 2).reshape((2, 2)))</span>
+<span class="sd">        &gt;&gt;&gt; a = ivy.Container(x=ivy.arange(2 * 3).reshape((2, 3)), </span>
+<span class="sd">        ...                   y=ivy.arange(2 * 3).reshape((2, 3)))</span>
+<span class="sd">        &gt;&gt;&gt; b = ivy.Container(x=ivy.arange(3 * 2).reshape((3, 2)), </span>
+<span class="sd">        ...                   y=ivy.arange(3 * 2).reshape((3, 2)))</span>
+<span class="sd">        &gt;&gt;&gt; c = ivy.Container(x=ivy.arange(2 * 2).reshape((2, 2)), </span>
+<span class="sd">        ...                   y=ivy.arange(2 * 2).reshape((2, 2)))</span>
 <span class="sd">        &gt;&gt;&gt; ivy.Container.static_multi_dot((a, b, c))</span>
 <span class="sd">        {</span>
 <span class="sd">            x: ivy.array([[26, 49], </span>
@@ -1316,7 +1319,7 @@
 
 <div class="viewcode-block" id="ContainerWithLinearAlgebraExperimental.multi_dot"><a class="viewcode-back" href="../../../../data_classes/container/experimental.html#ivy.container.experimental.ContainerWithLinearAlgebraExperimental.multi_dot">[docs]</a>    <span class="k">def</span> <span class="nf">multi_dot</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
-        <span class="n">arrays</span><span class="p">,</span>
+        <span class="n">arrays</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1332,9 +1335,12 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        &gt;&gt;&gt; a = ivy.Container(x=ivy.arange(2 * 3).reshape((2, 3)), y=ivy.arange(2 * 3).reshape((2, 3)))</span>
-<span class="sd">        &gt;&gt;&gt; b = ivy.Container(x=ivy.arange(3 * 2).reshape((3, 2)), y=ivy.arange(3 * 2).reshape((3, 2)))</span>
-<span class="sd">        &gt;&gt;&gt; c = ivy.Container(x=ivy.arange(2 * 2).reshape((2, 2)), y=ivy.arange(2 * 2).reshape((2, 2)))</span>
+<span class="sd">        &gt;&gt;&gt; a = ivy.Container(x=ivy.arange(2 * 3).reshape((2, 3)), </span>
+<span class="sd">        ...                   y=ivy.arange(2 * 3).reshape((2, 3)))</span>
+<span class="sd">        &gt;&gt;&gt; b = ivy.Container(x=ivy.arange(3 * 2).reshape((3, 2)), </span>
+<span class="sd">        ...                   y=ivy.arange(3 * 2).reshape((3, 2)))</span>
+<span class="sd">        &gt;&gt;&gt; c = ivy.Container(x=ivy.arange(2 * 2).reshape((2, 2)), </span>
+<span class="sd">        ...                   y=ivy.arange(2 * 2).reshape((2, 2)))</span>
 <span class="sd">        &gt;&gt;&gt; a.multi_dot((b, c))</span>
 <span class="sd">        {</span>
 <span class="sd">            x: ivy.array([[26, 49], </span>
