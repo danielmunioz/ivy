@@ -20,5 +20,4 @@ Linear algebra
    linear_algebra/eig.rst
    linear_algebra/eigvals.rst
    linear_algebra/adjoint.rst
-   linear_algebra/multi_dot.rst
 

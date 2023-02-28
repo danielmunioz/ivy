@@ -20,7 +20,6 @@ Experimental
    experimental/eig.rst
    experimental/eigvals.rst
    experimental/adjoint.rst
-   experimental/multi_dot.rst
    experimental/flatten.rst
    experimental/moveaxis.rst
    experimental/ndenumerate.rst
