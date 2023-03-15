@@ -303,13 +303,6 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../data_classes/array.html">
-                        Array
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../data_classes/container.html">
                         Container
                       </a>
@@ -317,22 +310,22 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../stateful/converters.html">
-                        Converters
+                      <a class="nav-link nav-internal" href="../../../data_classes/array.html">
+                        Array
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../stateful/sequential.html">
-                        Sequential
+                      <a class="nav-link nav-internal" href="../../../stateful/helpers.html">
+                        Helpers
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../stateful/activations.html">
-                        Activations
+                      <a class="nav-link nav-internal" href="../../../stateful/module.html">
+                        Module
                       </a>
                     </li>
                 
@@ -345,8 +338,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../stateful/module.html">
-                        Module
+                      <a class="nav-link nav-internal" href="../../../stateful/sequential.html">
+                        Sequential
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../stateful/norms.html">
+                        Norms
                       </a>
                     </li>
                 
@@ -366,15 +366,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../stateful/norms.html">
-                        Norms
+                      <a class="nav-link nav-internal" href="../../../stateful/converters.html">
+                        Converters
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../stateful/helpers.html">
-                        Helpers
+                      <a class="nav-link nav-internal" href="../../../stateful/activations.html">
+                        Activations
                       </a>
                     </li>
                 
@@ -1663,6 +1663,7 @@
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
         <span class="n">ensure_in_backend</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">keep_input_dtype</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.inplace_update. This method simply</span>
@@ -1712,7 +1713,12 @@
 <span class="sd">        support inplace updates</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inplace_update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">ensure_in_backend</span><span class="o">=</span><span class="n">ensure_in_backend</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inplace_update</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> 
+            <span class="n">val</span><span class="p">,</span> 
+            <span class="n">ensure_in_backend</span><span class="o">=</span><span class="n">ensure_in_backend</span><span class="p">,</span> 
+            <span class="n">keep_input_dtype</span><span class="o">=</span><span class="n">keep_input_dtype</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithGeneral.inplace_increment"><a class="viewcode-back" href="../../../data_classes/array/general/_ArrayWithGeneral.html#ivy.array.general._ArrayWithGeneral.inplace_increment">[docs]</a>    <span class="k">def</span> <span class="nf">inplace_increment</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">val</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]</span>
