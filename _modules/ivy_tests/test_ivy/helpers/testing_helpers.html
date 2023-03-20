@@ -303,13 +303,6 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../data_classes/container.html">
-                        Container
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../../data_classes/array.html">
                         Array
                       </a>
@@ -317,22 +310,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/helpers.html">
-                        Helpers
+                      <a class="nav-link nav-internal" href="../../../../data_classes/container.html">
+                        Container
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/module.html">
-                        Module
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/optimizers.html">
-                        Optimizers
+                      <a class="nav-link nav-internal" href="../../../../stateful/converters.html">
+                        Converters
                       </a>
                     </li>
                 
@@ -345,8 +331,22 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/norms.html">
-                        Norms
+                      <a class="nav-link nav-internal" href="../../../../stateful/activations.html">
+                        Activations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../stateful/optimizers.html">
+                        Optimizers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../stateful/module.html">
+                        Module
                       </a>
                     </li>
                 
@@ -366,15 +366,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/converters.html">
-                        Converters
+                      <a class="nav-link nav-internal" href="../../../../stateful/norms.html">
+                        Norms
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/activations.html">
-                        Activations
+                      <a class="nav-link nav-internal" href="../../../../stateful/helpers.html">
+                        Helpers
                       </a>
                     </li>
                 
@@ -389,13 +389,6 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../../utils/backend.html">
                         Backend
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../utils/_importlib.html">
-                        Importlib
                       </a>
                     </li>
                 
@@ -577,8 +570,10 @@
               
   <h1>Source code for ivy_tests.test_ivy.helpers.testing_helpers</h1><div class="highlight"><pre>
 <span></span><span class="c1"># general</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
 <span class="kn">import</span> <span class="nn">importlib</span>
 <span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">functools</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
 
 <span class="kn">from</span> <span class="nn">hypothesis</span> <span class="kn">import</span> <span class="n">given</span><span class="p">,</span> <span class="n">strategies</span> <span class="k">as</span> <span class="n">st</span>
@@ -925,7 +920,16 @@
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">filtered_args</span><span class="p">:</span>
                 <span class="n">_given_kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">possible_arguments</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
             <span class="c1"># Wrap the test with the @given decorator</span>
-            <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+
+            <span class="n">hypothesis_test_fn</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">hypothesis_test_fn</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">wrapped_test</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hypothesis_test_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">IvyNotImplementedException</span><span class="p">:</span>
+                    <span class="n">pytest</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;Function not implemented in backend.&quot;</span><span class="p">)</span>
+
         <span class="k">else</span><span class="p">:</span>
             <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">test_fn</span>
 
@@ -1131,7 +1135,15 @@
                 <span class="c1"># extend Hypothesis given kwargs with our strategies</span>
                 <span class="n">_given_kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">possible_arguments</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 
-            <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+            <span class="n">hypothesis_test_fn</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">hypothesis_test_fn</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">wrapped_test</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hypothesis_test_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">IvyNotImplementedException</span><span class="p">:</span>
+                    <span class="n">pytest</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;Function not implemented in backend.&quot;</span><span class="p">)</span>
+
         <span class="k">else</span><span class="p">:</span>
             <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">test_fn</span>
 

@@ -303,13 +303,6 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../data_classes/container.html">
-                        Container
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../../data_classes/array.html">
                         Array
                       </a>
@@ -317,22 +310,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/helpers.html">
-                        Helpers
+                      <a class="nav-link nav-internal" href="../../../../data_classes/container.html">
+                        Container
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/module.html">
-                        Module
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/optimizers.html">
-                        Optimizers
+                      <a class="nav-link nav-internal" href="../../../../stateful/converters.html">
+                        Converters
                       </a>
                     </li>
                 
@@ -345,8 +331,22 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/norms.html">
-                        Norms
+                      <a class="nav-link nav-internal" href="../../../../stateful/activations.html">
+                        Activations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../stateful/optimizers.html">
+                        Optimizers
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../stateful/module.html">
+                        Module
                       </a>
                     </li>
                 
@@ -366,15 +366,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/converters.html">
-                        Converters
+                      <a class="nav-link nav-internal" href="../../../../stateful/norms.html">
+                        Norms
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../stateful/activations.html">
-                        Activations
+                      <a class="nav-link nav-internal" href="../../../../stateful/helpers.html">
+                        Helpers
                       </a>
                     </li>
                 
@@ -389,13 +389,6 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../../utils/backend.html">
                         Backend
-                      </a>
-                    </li>
-                
-
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../../../utils/_importlib.html">
-                        Importlib
                       </a>
                     </li>
                 
@@ -1680,7 +1673,8 @@
 
 <span class="sd">    Examples</span>
 <span class="sd">    --------</span>
-<span class="sd">    With :class:&#39;ivy.Array&#39; inputs:</span>
+<span class="sd">    With :class:`ivy.Array` inputs:</span>
+<span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.array([[1., 2.], [3., 4.]])</span>
 <span class="sd">    &gt;&gt;&gt; y = ivy.matrix_norm(x)</span>
 <span class="sd">    &gt;&gt;&gt; print(y)</span>
@@ -1708,7 +1702,8 @@
 <span class="sd">    &gt;&gt;&gt; print(x)</span>
 <span class="sd">    ivy.array([10.5 ,  2.05])</span>
 
-<span class="sd">    With :class:&#39;ivy.Container&#39; input:</span>
+<span class="sd">    With :class:`ivy.Container` input:</span>
+
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([[0.666, 9.11], \</span>
 <span class="sd">                                       [42.69, 9.23]]), \</span>
 <span class="sd">                          b=ivy.array([[1.1, 2.2, 3.3], \</span>
@@ -1720,7 +1715,8 @@
 <span class="sd">        b: ivy.array(6.6000004)</span>
 <span class="sd">    }</span>
 
-<span class="sd">    With multiple :class:&#39;ivy:Container&#39; inputs:</span>
+<span class="sd">    With multiple :class:`ivy:Container` inputs:</span>
+<span class="sd">    </span>
 <span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.arange(12, dtype=float).reshape((3, 2, 2)), \</span>
 <span class="sd">                          b=ivy.arange(8, dtype=float).reshape((2, 2, 2))) </span>
 <span class="sd">    &gt;&gt;&gt; ord = ivy.Container(a=1, b=float(&#39;inf&#39;))</span>
