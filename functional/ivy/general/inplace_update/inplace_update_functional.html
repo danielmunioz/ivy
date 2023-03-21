@@ -589,6 +589,8 @@ then an exception will be thrown.</p>
 <li><p><strong>ensure_in_backend</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether or not to ensure that the <cite>ivy.NativeArray</cite> is also inplace updated. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
 In cases where it should be, backends which do not natively support inplace
 updates will raise an exception.</p></li>
+<li><p><strong>keep_input_dtype</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether or not to preserve <cite>x</cite> data type after the update, otherwise <cite>val</cite> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+data type will be applied. Defaults to False.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
