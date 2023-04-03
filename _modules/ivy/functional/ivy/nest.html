@@ -280,6 +280,11 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../../../../overview/faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../overview/glossary.html">Glossary</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compiling and Transpiling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../compiler/compiler.html">Graph Compiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../compiler/transpiler.html">Transpiler</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../../docs/functional/ivy/ivy.functional.ivy.activations.html">Activations</a></li>
@@ -1270,10 +1275,10 @@ document.write(`
 <span class="sd">        Whether to also include indices of the nests themselves, not only</span>
 <span class="sd">        leaves. Default is ``False``.</span>
 <span class="sd">    _index</span>
-<span class="sd">        The indices detected so far. None at the beginning. Used internally, </span>
+<span class="sd">        The indices detected so far. None at the beginning. Used internally,</span>
 <span class="sd">        do not set manually.</span>
 <span class="sd">    _base</span>
-<span class="sd">        Whether the current function call is the first function call in the </span>
+<span class="sd">        Whether the current function call is the first function call in the</span>
 <span class="sd">        recursive stack. Used internally, do not set manually.</span>
 <span class="sd">    extra_nest_types</span>
 <span class="sd">        Types to recursively check when deciding whether to go deeper into the</span>
@@ -1286,9 +1291,9 @@ document.write(`
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
 <span class="sd">        A set of indices of all elements in nest</span>
-<span class="sd">    </span>
-<span class="sd">    Both the description and the type hints above assumes an array input </span>
-<span class="sd">    for simplicity, but this function is nestable, and therefore also </span>
+
+<span class="sd">    Both the description and the type hints above assumes an array input</span>
+<span class="sd">    for simplicity, but this function is nestable, and therefore also</span>
 <span class="sd">    accepts :class:ivy.Container instances in place of the arguments.</span>
 
 <span class="sd">    Examples</span>
